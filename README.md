@@ -94,7 +94,7 @@ The **Gold-layer** datasets serve as a foundation for various downstream consume
 5. **Unity Catalog Integration**  
    - Ensure all Delta tables are created and managed under **Unity Catalog**, specifically within the `pricing_analytics` schema for proper governance and access control.  
    <img width="1844" height="870" alt="image" src="https://github.com/user-attachments/assets/42df1cb8-47cb-440f-8c6a-688240f75e06" />  
-## Step 3: Data Transformation
+### Step 3: Data Transformation
 
 1. **Transform Data with Notebooks**  
    - Use Databricks notebooks to clean, join, and enrich the data.
@@ -113,7 +113,7 @@ The **Gold-layer** datasets serve as a foundation for various downstream consume
 3. **Maintain Unity Catalog Compliance**  
    - All output tables should be written and managed under the `pricing_analytics` catalog to ensure security, lineage, and governance.
   
-## Step 4: Data Loading and Reporting
+### Step 4: Data Loading and Reporting
 **Create Dashboards**
    - Build Power BI dashboards based on business KPIs and reporting requirements.
      <img width="1089" height="697" alt="image" src="https://github.com/user-attachments/assets/53a6a7fa-df25-44f8-a941-6e4e228b1c2d" />
@@ -122,4 +122,13 @@ The **Gold-layer** datasets serve as a foundation for various downstream consume
 
 
 > 💡 Note: The Power BI reports are refreshed based on the updated gold layer ingested via batch jobs.
+## Step 5: Security and Governance  
+  - Manage Access: Set up role-based access control (RBAC) using Azure Entra ID (formerly Active Directory).  
 
+## Conclusion:  
+This project provides a robust end-to-end solution for analyzing pricing data. By leveraging Databricks, Delta Lake, and Azure Synapse, it ensures that stakeholders always have access to the most current and actionable insights through automated batch processing and CDC-enabled transformations.  
+
+## Contacts:  
+For any informations, please contact:  
+* Email: [lecongkhanh242003@gmail.com]()  
+* LinkedIn: [Here](https://www.linkedin.com/in/khanh-le-469818288/)
