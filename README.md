@@ -44,9 +44,9 @@ The **Gold-layer** datasets serve as a foundation for various downstream consume
 - **Azure Machine Learning**: Feature extraction and model training for predictive analytics
 
 ## Set Up Project  
-## Prerequisites:
+### Prerequisites:
 * An Azure account with sufficient credits.
-## Step 1: Azure Environment Setup
+### Step 1: Azure Environment Setup
 
 1. **Create Resource Group**  
    Set up a new Azure Resource Group that includes the necessary services such as:
@@ -71,7 +71,7 @@ The **Gold-layer** datasets serve as a foundation for various downstream consume
 4. **Set Up Azure Key Vault**  
    - Use Key Vault to securely manage secrets
 
-## Step 2: Data Ingestion
+### Step 2: Data Ingestion
 
 1. **Set Up Databricks Workspace**  
    - Create and configure a Databricks workspace for development and job scheduling.
@@ -93,6 +93,31 @@ The **Gold-layer** datasets serve as a foundation for various downstream consume
 
 5. **Unity Catalog Integration**  
    - Ensure all Delta tables are created and managed under **Unity Catalog**, specifically within the `pricing_analytics` schema for proper governance and access control.  
-  <img width="1844" height="870" alt="image" src="https://github.com/user-attachments/assets/42df1cb8-47cb-440f-8c6a-688240f75e06" />
+   <img width="1844" height="870" alt="image" src="https://github.com/user-attachments/assets/42df1cb8-47cb-440f-8c6a-688240f75e06" />  
+## Step 3: Data Transformation
 
+1. **Transform Data with Notebooks**  
+   - Use Databricks notebooks to clean, join, and enrich the data.
+   - Move data through the medallion architecture:
+     - **Bronze ➝ Silver**: Clean raw ingested data.
+     - **Silver ➝ Gold**: Perform aggregations and business logic to generate analytical datasets.  
+     <img width="1850" height="882" alt="image" src="https://github.com/user-attachments/assets/6701316d-4e0c-43d5-8b64-f031bb460dfc" />
+
+
+2. **Automate Transformation with Scheduled Jobs**  
+   - Configure a **daily batch job** in Databricks to automate the transform and load process.
+   - Ensure dependencies between bronze, silver, and gold tables are respected.  
+   <img width="1842" height="880" alt="image" src="https://github.com/user-attachments/assets/89cf0ec6-f956-475e-9716-fc82b029a91c" />
+
+
+3. **Maintain Unity Catalog Compliance**  
+   - All output tables should be written and managed under the `pricing_analytics` catalog to ensure security, lineage, and governance.
+  
+## Step 4: Data Loading and Reporting
+**Create Dashboards**
+   - Build Power BI dashboards based on business KPIs and reporting requirements.
+     <img width="680" height="677" alt="image" src="https://github.com/user-attachments/assets/0524bff4-c276-4c46-97c3-9a151fbc304e" />
+
+
+> 💡 Note: The Power BI reports are refreshed based on the updated gold layer ingested via batch jobs.
 
