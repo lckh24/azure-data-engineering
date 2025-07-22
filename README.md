@@ -116,6 +116,8 @@ The **Gold-layer** datasets serve as a foundation for various downstream consume
 ## Step 4: Data Loading and Reporting
 **Create Dashboards**
    - Build Power BI dashboards based on business KPIs and reporting requirements.
+     <img width="1089" height="697" alt="image" src="https://github.com/user-attachments/assets/53a6a7fa-df25-44f8-a941-6e4e228b1c2d" />
+
      <img width="680" height="677" alt="image" src="https://github.com/user-attachments/assets/0524bff4-c276-4c46-97c3-9a151fbc304e" />
 
 
